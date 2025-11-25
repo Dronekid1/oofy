@@ -1,0 +1,16 @@
+version: "3"
+services:
+  minecraft:
+    image: lscr.io/linuxserver/webtop:ubuntu-xfce
+    container_name: quincy-browser
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - TITLE=STLP Project
+    ports:
+      - "3000:3000"
+    shm_size: "7gb"
+    restart: unless-stopped
